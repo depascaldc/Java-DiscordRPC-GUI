@@ -1,0 +1,16 @@
+# Eclipse
+bin/
+.settings/
+.classpath
+.project
+
+# IntelliJ
+out/
+*.iml
+.idea/
+
+# project maven
+dependency-reduced-pom.xml
+target/
+
+
