@@ -70,7 +70,7 @@ public class FirePresenceAction implements MouseListener {
 	@Override
 	public void mouseExited(MouseEvent e) {
 		JButton btnFirePresence = (JButton) e.getSource();
-		btnFirePresence.setBackground(new Color(128, 128, 128));
+		btnFirePresence.setBackground(new Color(128, 128, 128).darker());
 		btnFirePresence.setForeground(new Color(128, 0, 0));
 	}
 

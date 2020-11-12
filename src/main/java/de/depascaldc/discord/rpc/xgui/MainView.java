@@ -37,6 +37,7 @@ import de.depascaldc.discord.rpc.xgui.actions.*;
 import de.depascaldc.discord.rpc.xgui.components.*;
 import de.depascaldc.discord.rpc.xgui.content.GuiContent;
 import javax.swing.border.LineBorder;
+import javax.swing.border.EmptyBorder;
 
 public class MainView {
 
@@ -122,6 +123,7 @@ public class MainView {
 		frame.getContentPane().add(panel);
 
 		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new EmptyBorder(0, 0, 0, 1));
 		panel_1.setBackground(Color.DARK_GRAY.darker());
 		panel_1.setBounds(0, 0, 54, 566);
 		frame.getContentPane().add(panel_1);
@@ -187,6 +189,7 @@ public class MainView {
 		lblClientId.setBounds(72, 12, 128, 15);
 		frame.getContentPane().add(lblClientId);
 		textField = new JTextField();
+		textField.setBorder(new LineBorder(new Color(33, 33, 33), 2));
 		textField.setCaretColor(new Color(192, 192, 192));
 		textField.setToolTipText("Enter the Rich Presence Client ID");
 		textField.setForeground(new Color(192, 192, 192));
@@ -199,9 +202,10 @@ public class MainView {
 		btnFirePresence.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		btnFirePresence.setForeground(new Color(128, 0, 0));
 		btnFirePresence.setIcon(SwingUtil.newImageIcon("/fire.png"));
+		btnFirePresence.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnFirePresence.setHorizontalTextPosition(JButton.CENTER);
 		btnFirePresence.setVerticalTextPosition(JButton.CENTER);
-		btnFirePresence.setBackground(new Color(128, 128, 128));
+		btnFirePresence.setBackground(new Color(128, 128, 128).darker());
 		btnFirePresence.setBounds(690, 489, 175, 42);
 		btnFirePresence.addMouseListener(actionFireRPC);
 		frame.getContentPane().add(btnFirePresence);
@@ -211,6 +215,7 @@ public class MainView {
 		lblNewLabel_1.setBounds(72, 84, 480, 15);
 		frame.getContentPane().add(lblNewLabel_1);
 		textField_1 = new JTextField();
+		textField_1.setBorder(new LineBorder(new Color(33, 33, 33), 2));
 		textField_1.setCaretColor(new Color(192, 192, 192));
 		textField_1.setToolTipText("This are the Presence Details ( can be empty ) ");
 		textField_1.setForeground(new Color(192, 192, 192));
@@ -225,6 +230,7 @@ public class MainView {
 		lblNewLabel_2.setBounds(72, 156, 480, 15);
 		frame.getContentPane().add(lblNewLabel_2);
 		textField_2 = new JTextField();
+		textField_2.setBorder(new LineBorder(new Color(33, 33, 33), 2));
 		textField_2.setCaretColor(new Color(192, 192, 192));
 		textField_2.setToolTipText("This is the Presence State ( can be empty )");
 		textField_2.setForeground(new Color(192, 192, 192));
@@ -238,6 +244,7 @@ public class MainView {
 		lblLargeImageKey.setBounds(72, 228, 480, 15);
 		frame.getContentPane().add(lblLargeImageKey);
 		textField_3 = new JTextField();
+		textField_3.setBorder(new LineBorder(new Color(33, 33, 33), 2));
 		textField_3.setCaretColor(new Color(192, 192, 192));
 		textField_3.setToolTipText(
 				"The Large Image key is the key to a picture you have uploaded at the discord developer portal");
@@ -252,6 +259,7 @@ public class MainView {
 		lblLargeImageText.setBounds(72, 300, 480, 15);
 		frame.getContentPane().add(lblLargeImageText);
 		textField_4 = new JTextField();
+		textField_4.setBorder(new LineBorder(new Color(33, 33, 33), 2));
 		textField_4.setForeground(new Color(192, 192, 192));
 		textField_4.setCaretColor(new Color(192, 192, 192));
 		textField_4.setBackground(Color.DARK_GRAY);
@@ -265,6 +273,7 @@ public class MainView {
 		lblSmallImageKey.setBounds(72, 372, 480, 15);
 		frame.getContentPane().add(lblSmallImageKey);
 		textField_5 = new JTextField();
+		textField_5.setBorder(new LineBorder(new Color(33, 33, 33), 2));
 		textField_5.setCaretColor(new Color(192, 192, 192));
 		textField_5.setToolTipText(
 				"The Small Image key is the key to a picture you have uploaded at the discord developer portal");
@@ -279,6 +288,7 @@ public class MainView {
 		lblSmallImageText.setBounds(72, 444, 480, 15);
 		frame.getContentPane().add(lblSmallImageText);
 		textField_6 = new JTextField();
+		textField_6.setBorder(new LineBorder(new Color(33, 33, 33), 2));
 		textField_6.setCaretColor(new Color(192, 192, 192));
 		textField_6.setBackground(Color.DARK_GRAY);
 		textField_6.setToolTipText("This is the text wich will appear when you hover the logo.");
@@ -365,6 +375,7 @@ public class MainView {
 		btnUpdateView.setBorder(new LineBorder(Color.BLACK, 2));
 		btnUpdateView.setForeground(Color.WHITE);
 		btnUpdateView.setHorizontalTextPosition(SwingConstants.CENTER);
+		btnUpdateView.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnUpdateView.setFont(new Font("Cantarell", Font.PLAIN, 10));
 		btnUpdateView.setBackground(Color.DARK_GRAY);
 		btnUpdateView.setBounds(95, 292, 96, 15);
