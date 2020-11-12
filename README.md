@@ -19,7 +19,7 @@
 
 ---
 ## Build JAR file
-- `git clone https://github.com/depascaldc/MinecraftServermanager`
+- `git clone https://github.com/depascaldc/Java-DiscordRPC-GUI`
 - `cd Java-DiscordRPC-GUI`
 - `mvn clean package`
 
@@ -35,9 +35,9 @@ Simply run `java -jar Java-DiscordRPC-GUI.jar`
 
 ### Configuration File Directory ( presence.properties ) 
 
-- Windows: `C:\\Users\YourUserName\AppData\Local\de.depascaldc\JavaDRPCTool\v1.0.0\`
+- Windows: `C:\\Users\YourUserName\AppData\Local\de.depascaldc\JavaDRPCTool\v1.0.2\`
 
-- Linux. `/home/YourUserName/.config/JavaDRPCTool/v1.0.0/`
+- Linux. `/home/YourUserName/.config/JavaDRPCTool/v1.0.2/`
 
 ---
 
