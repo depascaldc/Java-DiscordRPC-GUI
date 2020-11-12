@@ -31,7 +31,7 @@
 
 	<groupId>de.depascaldc.discord.rpc</groupId>
 	<artifactId>Java-DiscordRPC-GUI</artifactId>
-	<version>1.0.1.0</version>
+	<version>1.0.2.0</version>
 	<name>Java-DiscordRPC-GUI</name>
 	<description>A simple to use Discord Rich-Presence GUI</description>
 

@@ -64,6 +64,8 @@ public class MainView {
 	private JTextField textField_6;
 	
 	private Elements.JSwitchBox slider;
+	
+	private JPanel previewPanel;
 
 	public static MainView init(RichPresenceManager rpcManager) {
 		return new MainView(rpcManager);
@@ -108,6 +110,14 @@ public class MainView {
 		frame.getContentPane().add(lblNewLabel);
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 7));
 		lblNewLabel.setForeground(new Color(0, 0, 0));
+		
+		previewPanel = new JPanel();
+		previewPanel.setToolTipText("Discord Rich Presence Preview");
+		previewPanel.setForeground(new Color(0, 206, 209));
+		previewPanel.setBackground(new Color(0, 206, 209));
+		previewPanel.setBounds(659, 399, 240, -327);
+		frame.getContentPane().add(previewPanel);
+		previewPanel.setLayout(null);
 
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(30, 144, 255));
@@ -180,6 +190,7 @@ public class MainView {
 		lblClientId.setBounds(72, 12, 128, 15);
 		frame.getContentPane().add(lblClientId);
 		textField = new JTextField();
+		textField.setCaretColor(new Color(192, 192, 192));
 		textField.setToolTipText("Enter the Rich Presence Client ID");
 		textField.setForeground(new Color(192, 192, 192));
 		textField.setBackground(Color.DARK_GRAY);
@@ -202,6 +213,7 @@ public class MainView {
 		lblNewLabel_1.setBounds(72, 84, 480, 15);
 		frame.getContentPane().add(lblNewLabel_1);
 		textField_1 = new JTextField();
+		textField_1.setCaretColor(new Color(192, 192, 192));
 		textField_1.setToolTipText("This are the Presence Details ( can be empty ) ");
 		textField_1.setForeground(new Color(192, 192, 192));
 		textField_1.setBackground(Color.DARK_GRAY);
@@ -215,6 +227,7 @@ public class MainView {
 		lblNewLabel_2.setBounds(72, 156, 480, 15);
 		frame.getContentPane().add(lblNewLabel_2);
 		textField_2 = new JTextField();
+		textField_2.setCaretColor(new Color(192, 192, 192));
 		textField_2.setToolTipText("This is the Presence State ( can be empty )");
 		textField_2.setForeground(new Color(192, 192, 192));
 		textField_2.setBackground(Color.DARK_GRAY);
@@ -227,6 +240,7 @@ public class MainView {
 		lblLargeImageKey.setBounds(72, 228, 480, 15);
 		frame.getContentPane().add(lblLargeImageKey);
 		textField_3 = new JTextField();
+		textField_3.setCaretColor(new Color(192, 192, 192));
 		textField_3.setToolTipText("The Large Image key is the key to a picture you have uploaded at the discord developer portal");
 		textField_3.setBackground(Color.DARK_GRAY);
 		textField_3.setForeground(new Color(192, 192, 192));
@@ -252,6 +266,7 @@ public class MainView {
 		lblSmallImageKey.setBounds(72, 372, 480, 15);
 		frame.getContentPane().add(lblSmallImageKey);
 		textField_5 = new JTextField();
+		textField_5.setCaretColor(new Color(192, 192, 192));
 		textField_5.setToolTipText(
 				"The Small Image key is the key to a picture you have uploaded at the discord developer portal");
 		textField_5.setForeground(new Color(192, 192, 192));
@@ -265,6 +280,7 @@ public class MainView {
 		lblSmallImageText.setBounds(72, 444, 480, 15);
 		frame.getContentPane().add(lblSmallImageText);
 		textField_6 = new JTextField();
+		textField_6.setCaretColor(new Color(192, 192, 192));
 		textField_6.setBackground(Color.DARK_GRAY);
 		textField_6.setToolTipText("This is the text wich will appear when you hover the logo.");
 		textField_6.setForeground(new Color(192, 192, 192));
@@ -293,9 +309,11 @@ public class MainView {
 		textField_4.setText(guiContent.getLargeimagetext());
 		textField_5.setText(guiContent.getSmallimagekey());
 		textField_6.setText(guiContent.getSmallimagetext());
+		
+		this.updatePreview(guiContent);
 
 		frame.setBackground(Color.BLACK);
-		frame.setIconImage(SwingUtil.getImage("/appicon.ico"));
+		frame.setIconImage(SwingUtil.getImage("/appicon.png"));
 		
 		// center window
 		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
@@ -306,6 +324,10 @@ public class MainView {
 	
 	public void open() {
 		frame.setVisible(true);
+	}
+	
+	public void updatePreview(GuiContent content) {
+		
 	}
 
 	public RichPresenceManager getRpcManager() {
@@ -346,5 +368,9 @@ public class MainView {
 	
 	public Elements.JSwitchBox getSlider() {
 		return slider;
+	}
+	
+	public JPanel getPreviewPanel() {
+		return previewPanel;
 	}
 }
