@@ -9,6 +9,11 @@
 
 ### Easily and simply to use manager to manage the RichPresence of Discord
 
+## GUI Preview:
+[![GUI Preview](https://depascaldc.xyz/media/java_discord_richpresence_tool_preview.png)](https://depascaldc.xyz)
+
+---
+
 ## Download JAR / .exe / AppImage
 - [RELEASES Download](https://github.com/depascaldc/Java-DiscordRPC-GUI/releases/)
 
