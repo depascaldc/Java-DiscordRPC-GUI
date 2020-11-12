@@ -22,12 +22,15 @@
  *   
  */
 
-package de.depascaldc.discord.rpc.xgui;
+package de.depascaldc.discord.rpc.xgui.components;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -37,13 +40,19 @@ import javax.swing.UIManager;
 
 import de.depascaldc.discord.rpc.util.SwingUtil;
 
-public class WoooW_Screen {
+public class WindowFiredSucceed {
 	
 	private JWindow window;
 	private long startTime;
 	private int minimumMilliseconds;
 	
-	private WoooW_Screen() {
+	public static boolean active = false;
+	
+	private WindowFiredSucceed() {
+		List<String> gifPaths = new ArrayList<String>();
+		gifPaths.add("/success_1.gif");
+		gifPaths.add("/success_2.gif");
+		gifPaths.add("/success_3.gif");
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
@@ -51,7 +60,7 @@ public class WoooW_Screen {
 		window = new JWindow();
 		window.setLayout(new BorderLayout());
 		window.setAlwaysOnTop(true);
-		ImageIcon imageIcon = SwingUtil.newImageIcon("/wow.gif");
+		ImageIcon imageIcon = SwingUtil.newImageIcon(gifPaths.get(new Random().nextInt(gifPaths.size())));
 		JLabel label = new JLabel(imageIcon, SwingConstants.CENTER);
 		label.setBackground(Color.darkGray.darker().darker());
 		window.getContentPane().setBackground(Color.darkGray.darker().darker());
@@ -64,11 +73,12 @@ public class WoooW_Screen {
 		window.setBackground(Color.darkGray.darker().darker());
 	}
 
-	public static WoooW_Screen get() {
-		return new WoooW_Screen();
+	public static WindowFiredSucceed get() {
+		return new WindowFiredSucceed();
 	}
 
-	public WoooW_Screen show(int minimumMilliseconds) {
+	public WindowFiredSucceed show(int minimumMilliseconds) {
+		active = true;
 		this.minimumMilliseconds = minimumMilliseconds;
 		startTime = System.currentTimeMillis();
 		window.setVisible(true);
@@ -83,6 +93,7 @@ public class WoooW_Screen {
 		}
 		window.setVisible(false);
 		window.dispose();
+		active = false;
 		return true;
 	}
 

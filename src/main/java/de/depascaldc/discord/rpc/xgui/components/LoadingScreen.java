@@ -22,7 +22,7 @@
  *   
  */
 
-package de.depascaldc.discord.rpc.xgui;
+package de.depascaldc.discord.rpc.xgui.components;
 
 import javax.swing.*;
 import javax.swing.event.*;

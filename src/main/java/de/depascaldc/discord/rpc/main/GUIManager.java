@@ -29,15 +29,15 @@ import java.io.File;
 import de.depascaldc.discord.rpc.appdirs.AppDirs;
 import de.depascaldc.discord.rpc.appdirs.AppDirsFactory;
 import de.depascaldc.discord.rpc.dc.RichPresenceManager;
-import de.depascaldc.discord.rpc.xgui.LoadingScreen;
 import de.depascaldc.discord.rpc.xgui.MainView;
+import de.depascaldc.discord.rpc.xgui.components.LoadingScreen;
 
 public enum GUIManager {
 
 	INSTANCE;
 
 	public static final String CREDENTIALS_APP_NAME = "JavaDRPCTool", CREDENTIALS_AUTHOR = "de.depascaldc",
-			CREDENTIALS_VERSION = "v1.0.1";
+			CREDENTIALS_CONFIG_VERSION = "v1.0.1";
 
 	private static long timeStarted = System.currentTimeMillis() / 1000;
 	public static long ts = System.currentTimeMillis();
@@ -69,7 +69,7 @@ public enum GUIManager {
 		loadingThread.start();
 		// DEFINE DATA STORAGE
 		appDirs = AppDirsFactory.getInstance();
-		userConfigDir = appDirs.getUserConfigDir(CREDENTIALS_APP_NAME, CREDENTIALS_VERSION, CREDENTIALS_AUTHOR);
+		userConfigDir = appDirs.getUserConfigDir(CREDENTIALS_APP_NAME, CREDENTIALS_CONFIG_VERSION, CREDENTIALS_AUTHOR);
 		File configDirectory = new File(userConfigDir);
 		if(!configDirectory.exists())
 			configDirectory.mkdirs();

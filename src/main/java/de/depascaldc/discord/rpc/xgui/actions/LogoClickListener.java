@@ -29,7 +29,7 @@ import java.awt.event.MouseListener;
 
 import de.depascaldc.discord.rpc.main.GUIManager;
 import de.depascaldc.discord.rpc.util.SwingUtil;
-import de.depascaldc.discord.rpc.xgui.WoooW_Screen;
+import de.depascaldc.discord.rpc.xgui.components.WoooW_Screen;
 
 public class LogoClickListener implements MouseListener {
 	

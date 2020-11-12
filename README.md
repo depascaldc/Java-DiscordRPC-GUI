@@ -1,4 +1,4 @@
-# Simple Java Discord Rich Presence GUI
+# Java Discord Rich Presence GUI
 
 ### Author: depascaldc
 

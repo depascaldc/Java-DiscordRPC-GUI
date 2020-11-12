@@ -32,7 +32,7 @@ import javax.swing.JButton;
 
 import de.depascaldc.discord.rpc.util.SwingUtil;
 import de.depascaldc.discord.rpc.xgui.MainView;
-import de.depascaldc.discord.rpc.xgui.WindowFiredSucceed;
+import de.depascaldc.discord.rpc.xgui.components.WindowFiredSucceed;
 
 public class FirePresenceAction implements MouseListener {
 	
@@ -49,6 +49,12 @@ public class FirePresenceAction implements MouseListener {
 		SwingUtil.invokeLater(() -> {
 			new Thread(() -> {
 				view.getGuiContent().update();
+				view.getRpcManager().setAttributesFromContent(view.getGuiContent());
+				new Thread(() -> {
+					WindowFiredSucceed fw = WindowFiredSucceed.get().show(2500);
+					view.getRpcManager().saveProperties(true);
+					fw.hide();
+				}).start();
 			}).start();
 		});
 	}

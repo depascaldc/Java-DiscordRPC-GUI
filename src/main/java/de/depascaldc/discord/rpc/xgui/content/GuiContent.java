@@ -25,9 +25,8 @@
 package de.depascaldc.discord.rpc.xgui.content;
 
 import de.depascaldc.discord.rpc.dc.RichPresenceManager;
-import de.depascaldc.discord.rpc.util.SwingUtil;
 import de.depascaldc.discord.rpc.xgui.MainView;
-import de.depascaldc.discord.rpc.xgui.WindowFiredSucceed;
+import de.depascaldc.discord.rpc.xgui.components.WindowFiredSucceed;
 
 public class GuiContent {
 	
@@ -74,14 +73,6 @@ public class GuiContent {
 		
 		setShowStartTime(view.getSlider().getValue());
 		
-		rpc.setAttributesFromContent(this);
-		SwingUtil.invokeLater(() -> {
-			new Thread(() -> {
-				WindowFiredSucceed fw = WindowFiredSucceed.get().show(4500);
-				rpc.saveProperties(true);
-				fw.hide();
-			}).start();
-		});
 	}
 	
 	public long getTimeStampStarted() {
