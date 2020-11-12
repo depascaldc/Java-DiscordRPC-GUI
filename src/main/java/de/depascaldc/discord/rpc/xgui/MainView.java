@@ -69,6 +69,7 @@ public class MainView {
 
 	private JLabel clockLabel;
 	private Thread clockUpdateThread;
+	private Timer clockUpdateTimer;
 
 	public static MainView init(RichPresenceManager rpcManager) {
 		return new MainView(rpcManager);
@@ -452,6 +453,13 @@ public class MainView {
 					}
 					clockUpdateThread = null;
 				}
+				if (clockUpdateTimer != null) {
+					try {
+						clockUpdateTimer.stop();
+					} catch (Exception e) {
+					}
+					clockUpdateTimer = null;
+				}
 
 				clockLabel = new JLabel("00:00:00 elapsed");
 				clockLabel.setFont(new Font("Cantarell", Font.PLAIN, 8));
@@ -461,7 +469,7 @@ public class MainView {
 				Date start = new Date();
 				SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
 				clockUpdateThread = new Thread(() -> {
-					Timer timer = new Timer(1000, new ActionListener() {
+					clockUpdateTimer = new Timer(1000, new ActionListener() {
 						@Override
 						public void actionPerformed(ActionEvent arg0) {
 							if (clockLabel != null) {
@@ -472,7 +480,7 @@ public class MainView {
 							}
 						}
 					});
-					timer.start();
+					clockUpdateTimer.start();
 				});
 				clockUpdateThread.start();
 			}
@@ -506,6 +514,13 @@ public class MainView {
 					}
 					clockUpdateThread = null;
 				}
+				if (clockUpdateTimer != null) {
+					try {
+						clockUpdateTimer.stop();
+					} catch (Exception e) {
+					}
+					clockUpdateTimer = null;
+				}
 
 				clockLabel = new JLabel("00:00:00 elapsed");
 				clockLabel.setFont(new Font("Cantarell", Font.PLAIN, 8));
@@ -515,7 +530,7 @@ public class MainView {
 				Date start = new Date();
 				SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
 				clockUpdateThread = new Thread(() -> {
-					Timer timer = new Timer(1000, new ActionListener() {
+					clockUpdateTimer = new Timer(1000, new ActionListener() {
 						@Override
 						public void actionPerformed(ActionEvent arg0) {
 							if (clockLabel != null) {
@@ -526,7 +541,7 @@ public class MainView {
 							}
 						}
 					});
-					timer.start();
+					clockUpdateTimer.start();
 				});
 				clockUpdateThread.start();
 			}
