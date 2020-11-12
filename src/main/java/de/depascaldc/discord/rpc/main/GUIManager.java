@@ -37,7 +37,7 @@ public enum GUIManager {
 	INSTANCE;
 
 	public static final String CREDENTIALS_APP_NAME = "JavaDRPCTool", CREDENTIALS_AUTHOR = "de.depascaldc",
-			CREDENTIALS_CONFIG_VERSION = "v1.0.1";
+			CREDENTIALS_CONFIG_VERSION = "v1.0.2";
 
 	private static long timeStarted = System.currentTimeMillis() / 1000;
 	public static long ts = System.currentTimeMillis();

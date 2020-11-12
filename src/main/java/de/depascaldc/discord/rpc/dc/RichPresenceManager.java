@@ -171,12 +171,12 @@ public class RichPresenceManager {
 
 		if (!propertiesFile.exists()) {
 			properties.setProperty("id", "775930524291039243");
-			properties.setProperty("details", "Java Discord RPC GUI");
-			properties.setProperty("state", "Copyright © 2020 depascaldc.xyz");
+			properties.setProperty("details", "Customize the Rich Presence");
+			properties.setProperty("state", "github.com/depascaldc/Java-DiscordRPC-GUI");
 			properties.setProperty("largeimagekey", "logo");
-			properties.setProperty("largeimagetext", "https://depascaldc.xyz/");
+			properties.setProperty("largeimagetext", "github.com/depascaldc/Java-DiscordRPC-GUI");
 			properties.setProperty("smallimagekey", "jdcof");
-			properties.setProperty("smallimagetext", "https://github.com/depascaldc/Java-DiscordRPC-GUI");
+			properties.setProperty("smallimagetext", "https://depascaldc.xyz/");
 			properties.setProperty("showtime", "yes");
 			saveProperties(false);
 		} else {
