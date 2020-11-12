@@ -408,12 +408,14 @@ public class MainView {
 		lblPlayingAGame.setBounds(12, 12, 175, 15);
 		presencePreviewPanel.add(lblPlayingAGame);
 		if (!isEmptyString(guiContent.getLargeimagekey())) {
-			JLabel lblApplicationname = new JLabel("ApplicationName");
+			// paint with images
+			
+			JLabel lblApplicationname = new JLabel("Application Name");
 			lblApplicationname.setFont(new Font("Cantarell", Font.BOLD, 12));
 			lblApplicationname.setForeground(Color.WHITE);
 			lblApplicationname.setBounds(76, 30, 123, 15);
 			presencePreviewPanel.add(lblApplicationname);
-			// paint with images
+			
 			JLabel label_3 = new JLabel(SwingUtil.newImageIcon("/appicon_68.png"));
 			label_3.setBounds(12, 30, 70, 70);
 			presencePreviewPanel.add(label_3);
@@ -487,6 +489,13 @@ public class MainView {
 
 		} else {
 			// paint without images
+			
+			JLabel lblApplicationname = new JLabel("Application Name");
+			lblApplicationname.setFont(new Font("Cantarell", Font.BOLD, 12));
+			lblApplicationname.setForeground(Color.WHITE);
+			lblApplicationname.setBounds(12, 30, 175, 15);
+			presencePreviewPanel.add(lblApplicationname);
+			
 			if (!isEmptyString(guiContent.getDetails())) {
 				JLabel lblThisAreTheDetails = new JLabel(guiContent.getDetails());
 				lblThisAreTheDetails.setFont(new Font("Cantarell", Font.PLAIN, 10));
